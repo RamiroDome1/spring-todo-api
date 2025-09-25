@@ -1,6 +1,7 @@
-package com.example.demo;
+package com.example.demo.entity;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 import org.hibernate.id.factory.internal.AutoGenerationTypeStrategy;
 import org.springframework.context.annotation.Bean;
@@ -23,7 +24,7 @@ public class Task {
     @Column
     private Boolean completed = false;
 
-    @UpdateTimestamp
+    @CreationTimestamp
     @Column(name = "created_at", updatable = false)
     private LocalDateTime createdAt;
 
